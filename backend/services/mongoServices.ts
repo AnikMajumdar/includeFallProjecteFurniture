@@ -7,6 +7,7 @@ export async function startMongoClient() {
 
     if (!connectionString) {
         console.error("failed to load mongodb connection string")
+        return
     } 
 
     const client = new MongoClient(connectionString, { //create new client
@@ -16,16 +17,20 @@ export async function startMongoClient() {
             deprecationErrors: true
         }
     });
-
+    
     try { //try to connect to the client
         await client.connect()
         await client.db("FurnitureDB").command({ping: 1})
         console.log('Pinged. You are now connected to mongoDB')
+         return client
         
     } catch (e) {
-        console.log('failed to connect')
+        console.log('failed to connect', e)
         return 
     }
 
-    return client
+
 }
+
+
+

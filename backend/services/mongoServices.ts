@@ -22,7 +22,7 @@ export async function startMongoClient() {
         await client.connect()
         await client.db("FurnitureDB").command({ping: 1})
         console.log('Pinged. You are now connected to mongoDB')
-         return client
+        return client
         
     } catch (e) {
         console.log('failed to connect', e)

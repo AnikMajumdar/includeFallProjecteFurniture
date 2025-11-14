@@ -1,0 +1,21 @@
+// Variables
+$container-padding-y: 2rem;
+
+// Products Grid
+.products-grid {
+  display: grid;
+
+  // Automatically fit as many columns as will comfortably fit,
+  // each at least 220px wide, but able to grow to fill the row.
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+
+  gap: 2.5rem;
+
+  // Center the grid and let it take up most of the viewport width
+  max-width: 1350px; // tweak if you want wider/narrower
+  margin: 0 auto;
+  margin-top: 50px;
+
+  padding: $container-padding-y;
+  padding-top: 6rem; // offset for fixed header (adjust to header height)
+}

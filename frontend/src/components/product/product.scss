@@ -1,0 +1,77 @@
+// Variables
+$primary-color: #2c3e50;
+$accent-color: #2c3e50;
+$white: #ffffff;
+$border-color: #e0e0e0;
+
+// Product Card
+.product-card {
+  background-color: $white;
+  border: 1px solid $border-color;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  width: 100%;                // fill grid column
+  height: auto;               // grow naturally
+  display: flex;
+  flex-direction: column;
+
+  &:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+  }
+
+  &__image {
+    width: 100%;
+    height: 160px;            // consistent image box height
+    object-fit: contain;      // show entire image
+    background: #f8f8f8;      // subtle background when image doesn’t fill
+    display: block;
+    padding: 0.5rem;          // optional breathing room
+  }
+
+  &__content {
+    padding: 1.25rem 1.5rem;
+    flex: 1;                  // fill remaining space
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: $primary-color;
+    margin: 0 0 0.5rem 0;
+  }
+
+  &__price {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: $primary-color;
+    margin-bottom: 1rem;
+  }
+
+  &__button {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: $accent-color;
+    color: $white;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: auto;        // push to bottom of card
+
+    &:hover {
+      background-color: darken($accent-color, 8%);
+      transform: translateY(-2px);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+  }
+}

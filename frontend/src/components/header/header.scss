@@ -1,6 +1,6 @@
 // Variables
 $primary-color: #2c3e50;
-$accent-color: #8b7355;
+$accent-color: #2c3e50;
 $white: #ffffff;
 $shadow: rgba(0, 0, 0, 0.1);
 
@@ -64,7 +64,6 @@ $shadow: rgba(0, 0, 0, 0.1);
     
     // Cart icon
     &::before {
-      content: "🛒";
       font-size: 1.2rem;
     }
   }

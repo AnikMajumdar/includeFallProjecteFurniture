@@ -1,10 +1,9 @@
 "use client"
 import React, {useEffect, useState} from 'react';
 import './featured.scss';
-import Product from '../product/product';
+import ProductCard from '../productCard/productCard';
 
-
-const Products = () => {
+const Featured = () => {
 
   const [featuredProducts, setFeaturedProducts] = useState([])
 
@@ -19,20 +18,23 @@ const Products = () => {
   getFeaturedProducts()
   }, [])
 
+  console.log(featuredProducts)
+
   return (
     <div className="products-grid">
       {
         featuredProducts.map((product: any) => 
-          <Product
+          <ProductCard
+          key={product.uid}
           image={product.image_path}
           name={product.name}
           price={product.price}
+          sku={product.sku}
           />
-
         )
       }  
     </div>
   );
 };
 
-export default Products;
+export default Featured;

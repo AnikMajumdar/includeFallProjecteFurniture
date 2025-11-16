@@ -13,9 +13,11 @@ interface ProductProps {
 const ProductCard = ({image, name, price, sku} : ProductProps) => {
   return (
     <div>
-        <Link href={{
+        <Link 
+        style={{ textDecoration: 'none', color: 'inherit' }}
+        href={{
                 pathname: `/item/${sku}`,
-          
+                query: { sku: sku },
             }}>
                   <div
     className="product-card">

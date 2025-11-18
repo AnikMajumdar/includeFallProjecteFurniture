@@ -1,0 +1,57 @@
+.search-wrapper {
+  padding-top: 6rem;
+  min-height: 100vh;
+}
+
+.search-container {
+  padding: 2rem;
+  max-width: 1350px;
+  margin: 0 auto;
+}
+
+.search-title {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #333;
+  font-weight: 600;
+  margin-top: 0;
+}
+
+.search-subtitle {
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+  color: #333;
+  font-weight: 400;
+  margin-top: 0;
+}
+
+.search-count {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+.search-status {
+  font-size: 1.1rem;
+  color: #666;
+  text-align: center;
+  padding: 3rem 2rem;
+}
+
+.search-error {
+  font-size: 1.1rem;
+  color: #d32f2f;
+  text-align: center;
+  padding: 2rem;
+  background-color: #ffebee;
+  border-radius: 4px;
+  margin: 2rem 0;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2.5rem;
+  margin-top: 1.5rem;
+}

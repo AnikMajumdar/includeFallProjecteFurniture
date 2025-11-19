@@ -1,9 +1,17 @@
 "use client"
 import React, { useEffect, useState } from "react"
 import { useSearchParams } from "next/navigation"
-import Header from "@/components/header/header"
-import ProductInfo from "@/components/productInfo/prouctInfo"
+import Header from "@/app/(components)/header/header"
+import ProductInfo from "@/app/(components)/productInfo/prouctInfo"
 
+interface Item {
+  name: string,
+  sku: string,
+  description: string,
+  price: number,
+  image_path: string,
+
+}
 
 
 const Item = () => {
@@ -11,7 +19,7 @@ const Item = () => {
   const params = useSearchParams()
   const sku = params.get("sku");
 
-  const [iteminfo, setItemInfo] = useState()
+  const [iteminfo, setItemInfo] = useState<Item>()
 
   useEffect(() => {
     const getItemInfo = async () => {
@@ -35,7 +43,6 @@ const Item = () => {
     description={iteminfo.description}
     price={iteminfo.price}
     image={iteminfo.image_path}
-
     />
      </div>
   }

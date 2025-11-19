@@ -21,18 +21,25 @@ const Featured = () => {
   console.log(featuredProducts)
 
   return (
-    <div className="products-grid">
-      {
-        featuredProducts.map((product: any) => 
-          <ProductCard
-          key={product.uid}
-          image={product.image_path}
-          name={product.name}
-          price={product.price}
-          sku={product.sku}
-          />
-        )
-      }  
+    <div className="products-section">
+      <h1 className="products-section__title">Featured</h1>
+      
+      <div className="products-grid">
+        {
+          featuredProducts.map((product: any) => 
+            <ProductCard
+            key={product.uid}
+            image={product.image_path}
+            name={product.name}
+            price={product.price}
+            sku={product.sku}
+            description={product.description}
+            inCart={false}
+            id={product.uid}
+            />
+          )
+        }  
+      </div>
     </div>
   );
 };

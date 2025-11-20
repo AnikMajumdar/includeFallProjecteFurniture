@@ -1,10 +1,10 @@
 .search-wrapper {
-  padding-top: 6rem;
+  padding-top: 2rem;
   min-height: 100vh;
 }
 
 .search-container {
-  padding: 2rem;
+  padding: 1rem;
   max-width: 1350px;
   margin: 0 auto;
 }
@@ -28,7 +28,6 @@
 .search-count {
   font-size: 1rem;
   color: #666;
-  margin-bottom: 1.5rem;
   font-weight: 500;
 }
 
@@ -52,6 +51,4 @@
 .products-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 2.5rem;
-  margin-top: 1.5rem;
 }

@@ -6,17 +6,34 @@ import ProductCard from '../productCard/productCard';
 const Featured = () => {
 
   const [featuredProducts, setFeaturedProducts] = useState([])
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
+ 
+ const getFeaturedProducts = async () => {   
 
-  const getFeaturedProducts = async () => {   
-       const url = "https://furniture-api.fly.dev/v1/products?featured"
+       try {
+         const url = "https://furniture-api.fly.dev/v1/products?featured"
        const response = await fetch(url)
        const result = await response.json();
        setFeaturedProducts(result.data)
+       } catch (err) {
+          console.log(err)
+       } finally {
+        setLoading(false)
+       }
   }
   getFeaturedProducts()
   }, [])
+
+  if (loading) {
+    return (
+       <div className="products-section">
+      <h1 className="featured-sign">Featured</h1>
+        <div className="loading-sign"></div>
+    </div>
+    )
+  }
 
   return (
     <div className="products-section">

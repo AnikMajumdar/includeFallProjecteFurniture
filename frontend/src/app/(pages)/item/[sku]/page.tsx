@@ -18,20 +18,37 @@ const Item = () => {
 
   const params = useSearchParams()
   const sku = params.get("sku");
+  
 
   const [iteminfo, setItemInfo] = useState<Item>()
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     const getItemInfo = async () => {
-        const url = `https://furniture-api.fly.dev/v1/products/${sku}`
+      try {
+         const url = `https://furniture-api.fly.dev/v1/products/${sku}`
         const response = await fetch(url)
         const result = await response.json();
         setItemInfo(result.data)   
         console.log(iteminfo) 
+      } catch (err) {
+        console.log('error')
+      } finally {
+        setLoading(false)
+      }
+       
     }
     getItemInfo()
   }, [sku])
-  
+
+  if (loading) {
+    return (
+      <div>
+        <Header/>
+        <div className="loading-sign"></div>
+    </div>
+    )
+  }
   // Use the sku here
   if (iteminfo != undefined) {
 

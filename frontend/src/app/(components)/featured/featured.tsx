@@ -18,11 +18,9 @@ const Featured = () => {
   getFeaturedProducts()
   }, [])
 
-  console.log(featuredProducts)
-
   return (
     <div className="products-section">
-      <h1 className="products-section__title">Featured</h1>
+      <h1 className="featured-sign">Featured</h1>
       
       <div className="products-grid">
         {

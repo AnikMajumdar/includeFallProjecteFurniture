@@ -15,6 +15,7 @@ interface Product {
 
 const Cart = () => {
   const [cart, setCart] = useState<Product[]>();
+  const [cartUpdate, setCartUpdate] = useState(0)
   //fetch items in cart and display them
   useEffect(() => {
     const getCartItems = async () => {
@@ -22,13 +23,14 @@ const Cart = () => {
       setCart(response);
     };
     getCartItems();
-  }, []);
+  }, [cartUpdate]);
 
 
   if (cart) {
     return (
       <div>
         <Header />
+        <h1 className="featured-sign">Cart</h1>
         {
           <div className="products-grid">
             {cart.map((product: any) => (
@@ -41,6 +43,7 @@ const Cart = () => {
                 description={product.description}
                 inCart={true}
                 id={product._id}
+                setCartUpdate={setCartUpdate}
               />
             ))}
           </div>

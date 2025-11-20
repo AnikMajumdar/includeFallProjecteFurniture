@@ -3,6 +3,24 @@ $primary-color: #2c3e50;
 $accent-color: #2c3e50;
 $white: #ffffff;
 $shadow: rgba(0, 0, 0, 0.1);
+$container-padding-y: 2rem;
+
+// ---- GLOBAL FIX FOR FIXED HEADER ----
+body {
+  padding-top: 6rem; // default desktop header height
+}
+
+@media (max-width: 768px) {
+  body {
+    padding-top: 8rem; // more room when header gets taller
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding-top: 10rem; // header wraps on very small screens
+  }
+}
 
 // Header Styles
 .header {
@@ -87,25 +105,5 @@ $shadow: rgba(0, 0, 0, 0.1);
     justify-content: center;
     font-size: 0.75rem;
     font-weight: 700;
-  }
-}
-
-// Responsive Design
-@media (max-width: 768px) {
-  .header {
-    &__container {
-      padding: 1rem 1.5rem;
-      flex-direction: column;
-      gap: 1rem;
-    }
-    
-    &__logo {
-      font-size: 1.25rem;
-    }
-    
-    &__cart-btn {
-      padding: 0.625rem 1.25rem;
-      font-size: 0.9rem;
-    }
   }
 }

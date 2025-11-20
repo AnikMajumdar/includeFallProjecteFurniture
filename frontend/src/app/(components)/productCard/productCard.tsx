@@ -14,6 +14,7 @@ interface ProductProps {
   description: string;
   inCart: boolean;
   id: string;
+  setCartUpdate: React.Dispatch<React.SetStateAction<number>>;
 }
 
 const ProductCard = ({
@@ -24,6 +25,7 @@ const ProductCard = ({
   description,
   inCart,
   id,
+  setCartUpdate
 }: ProductProps) => {
   const [showToast, setShowToast] = useState(false);
   const [toastMessage, setToastMessage] = useState("");
@@ -36,6 +38,8 @@ const ProductCard = ({
     setToastMessage("Removed from cart!");
     setToastType("info");
     setShowToast(true);
+    setCartUpdate(prev => prev + 1)
+
   };
 
   const handleAddToCart = (e: React.MouseEvent<HTMLButtonElement>) => {

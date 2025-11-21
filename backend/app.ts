@@ -3,6 +3,7 @@ import type { Application } from 'express' //for typing
 import { startMongoClient } from "./services/mongoServices.ts"
 import 'dotenv/config' //need these packages to load from env files
 import furnitureRouter from "./routes/furnitureRoutes.ts"
+import usersRouter from "./routes/usersRoutes.ts"
 import cors from "cors";
 
 const app: Application = express()
@@ -18,6 +19,8 @@ async function setupClient() {
 setupClient()
 
 app.use("/", furnitureRouter);
+app.use("/", usersRouter);
+
 
 const PORT = 3001; //port 3000 for local development
 app.listen(PORT, () => {

@@ -11,10 +11,10 @@ interface ProductProps {
   name: string;
   price: number;
   sku: string;
-  description: string;
-  inCart: boolean;
-  id: string;
-  setCartUpdate: React.Dispatch<React.SetStateAction<number>>;
+  description: string | null;
+  inCart: boolean | null;
+  id: string | null;
+  setCartUpdate: React.Dispatch<React.SetStateAction<number>> | null;
 }
 
 const ProductCard = ({
@@ -31,15 +31,13 @@ const ProductCard = ({
   const [toastMessage, setToastMessage] = useState("");
   const [toastType, setToastType] = useState<"success" | "error" | "info">("success");
 
-  const handleRemoveFromCart = (e: React.MouseEvent<HTMLButtonElement>) => {
+  const handleRemoveFromCart = async (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     e.stopPropagation();
-    removeFromCart(id);
+    await removeFromCart(id)
     setToastMessage("Removed from cart!");
-    setToastType("info");
-    setShowToast(true);
     setCartUpdate(prev => prev + 1)
-
+    setToastType("info");
   };
 
   const handleAddToCart = (e: React.MouseEvent<HTMLButtonElement>) => {

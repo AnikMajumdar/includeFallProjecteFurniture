@@ -52,3 +52,26 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 }
+
+.loading-sign {
+  display: flex;
+  align-items: center; 
+  justify-content: center; 
+  height: 60vh;  
+}
+
+.loading-sign::after {
+  content: "";
+  width: 24px;
+  height: 24px;
+  border: 3px solid #ccc;
+  border-top-color: #333;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

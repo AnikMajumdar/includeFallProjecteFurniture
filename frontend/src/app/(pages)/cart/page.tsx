@@ -17,6 +17,8 @@ const Cart = () => {
   const [cart, setCart] = useState<Product[]>();
   const [cartUpdate, setCartUpdate] = useState(0)
   //fetch items in cart and display them
+  
+  
   useEffect(() => {
     const getCartItems = async () => {
       const response = await getCart();

@@ -46,7 +46,7 @@ const Search = () => {
         <div className="search-container">
           <h2 className="search-subtitle">search results for {query}:</h2>
 
-          {loading && <p className="search-status">Loading...</p>}
+          {loading && <p className="loading-sign"></p>}
 
           {error && <p className="search-error">{error}</p>}
 

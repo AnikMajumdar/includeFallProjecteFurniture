@@ -20,7 +20,7 @@ const ProductInfo = ({image, name, price, sku, description} : ProductProps) => {
       
       <div className="product-info__details">
         <h1 className="product-info__name">{name}</h1>
-        
+       
         <p className="product-info__description">
           {description}
         </p>

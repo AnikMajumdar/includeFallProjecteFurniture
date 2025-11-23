@@ -12,3 +12,13 @@ export async function createUser (client: MongoClient, username: string, passwor
         return user.insertedId
 
 }
+
+export async function getUserById (client: MongoClient, id: string) {
+        const user = await client.db("FurnitureDB").collection("Users").findOne({_id: new ObjectId(id)})
+        return user
+}
+
+export async function getUserByUsername (client: MongoClient, username: string) {
+        const user = await client.db("FurnitureDB").collection("Users").findOne({username})
+        return user
+}

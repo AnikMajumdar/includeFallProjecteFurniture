@@ -1,26 +1,26 @@
 "use client"
 import React, {useState, useEffect} from "react";
-import "./signup.scss";
+import "@/app/(pages)/signup/signup.scss"
 import Register from "@/app/(utils)/register";
 import { redirect } from 'next/navigation'
+import Login from "@/app/(utils)/login";
 
 
-export default function Signup() {
+export default function login() {
 
   const [username, setUsername] = useState<string>("")
   const [password, setPassword] = useState<string>("")
 
 
-  const register = async () => {
+  const login = async () => {
     
-      const response = await Register(username, password)
+      const response = await Login(username, password)
       
-      if (response.success) {
+      if (response.token) {
         redirect("/home")
       }
 
   }
-
 
 
   return (
@@ -28,7 +28,7 @@ export default function Signup() {
       <h1 className="main-title">Furniture E-Commerce</h1>
 
       <div className="signup-card">
-        <h2>Create Account</h2>
+        <h2>Log In</h2>
 
         <form>
           <div className="form-group">
@@ -47,14 +47,14 @@ export default function Signup() {
           </div>
 
           <button type="button" className="signup-btn"
-          onClick={register}
+          onClick={login}
           >
-            Sign Up
+            Login
           </button>
         </form>
 
         <p className="login-text">
-          Already have an account? <a href="/login">Login</a>
+          Dont have an account? <a href="/signup">signup</a>
         </p>
       </div>
     </div>

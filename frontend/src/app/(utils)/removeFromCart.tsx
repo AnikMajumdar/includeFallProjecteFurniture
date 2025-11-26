@@ -1,6 +1,5 @@
 const removeFromCart = async (id: string) => {
 
-
     const url = `http://localhost:3001/cart/${id}`;
 
     try {

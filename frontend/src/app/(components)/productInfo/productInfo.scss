@@ -43,7 +43,7 @@
   &__name {
     font-size: 2.5rem;
     font-weight: 600;
-    color: #1a1a1a;
+    color: var(--text-primary);
     margin: 0;
     line-height: 1.2;
     letter-spacing: -0.5px;
@@ -56,16 +56,40 @@
   &__description {
     font-size: 1.1rem;
     line-height: 1.7;
-    color: #555555;
+    color: var(--text-secondary);
     margin: 0;
   }
 
   &__price {
     font-size: 2rem;
     font-weight: 700;
-    color: #000000;
+    color: var(--accent-color);
     margin-top: auto;
     padding-top: 1rem;
-    border-top: 2px solid #e5e5e5;
+    border-top: 2px solid var(--border-color);
+  }
+
+  &__add-btn {
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+
+    &:hover {
+      background-color: var(--button-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
   }
 }

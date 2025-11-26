@@ -21,6 +21,13 @@ const Login = async (username: string, password: string) => {
     }
 
     const result = await response.json();
+    
+    // Store JWT token in localStorage
+    if (result.token) {
+      localStorage.setItem("authToken", result.token);
+      localStorage.setItem("user", JSON.stringify(result.user));
+    }
+    
     return result;
   } catch (err) {
     console.log(err);

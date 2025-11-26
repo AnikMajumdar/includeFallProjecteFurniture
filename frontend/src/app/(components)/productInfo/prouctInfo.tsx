@@ -1,5 +1,7 @@
+"use client";
 import React from 'react';
 import './productInfo.scss';
+import addToCart from '@/app/(utils)/addToCart';
 
 interface ProductProps {
     sku: string,
@@ -9,6 +11,18 @@ interface ProductProps {
     image: string
 }
 const ProductInfo = ({image, name, price, sku, description} : ProductProps) => {
+  const handleAddToCart = async () => {
+    try {
+      const result = await addToCart(image, name, price, description, sku);
+      if (result) {
+        alert(`${name} added to cart!`);
+      }
+    } catch (error) {
+      console.error('Failed to add item to cart:', error);
+      alert('Failed to add item to cart');
+    }
+  };
+
   return (
     <div className="product-info">
       <div className="product-info__image">
@@ -25,6 +39,12 @@ const ProductInfo = ({image, name, price, sku, description} : ProductProps) => {
           {description}
         </p>
         <div className="product-info__price">${price}</div>
+        <button 
+          className="product-info__add-btn"
+          onClick={handleAddToCart}
+        >
+          Add to Cart
+        </button>
       </div>
     </div>
   );

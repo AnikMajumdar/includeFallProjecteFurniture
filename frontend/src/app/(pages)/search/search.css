@@ -12,7 +12,7 @@
 .search-title {
   font-size: 2.5rem;
   margin-bottom: 2rem;
-  color: #333;
+  color: var(--text-primary);
   font-weight: 600;
   margin-top: 0;
 }
@@ -20,20 +20,20 @@
 .search-subtitle {
   font-size: 1.25rem;
   margin-bottom: 1.5rem;
-  color: #333;
+  color: var(--text-primary);
   font-weight: 400;
   margin-top: 0;
 }
 
 .search-count {
   font-size: 1rem;
-  color: #666;
+  color: var(--text-secondary);
   font-weight: 500;
 }
 
 .search-status {
   font-size: 1.1rem;
-  color: #666;
+  color: var(--text-secondary);
   text-align: center;
   padding: 3rem 2rem;
 }
@@ -43,7 +43,7 @@
   color: #d32f2f;
   text-align: center;
   padding: 2rem;
-  background-color: #ffebee;
+  background-color: var(--error-bg);
   border-radius: 4px;
   margin: 2rem 0;
 }
@@ -64,8 +64,8 @@
   content: "";
   width: 24px;
   height: 24px;
-  border: 3px solid #ccc;
-  border-top-color: #333;
+  border: 3px solid var(--border-color);
+  border-top-color: var(--accent-color);
   border-radius: 50%;
   animation: spin 0.8s linear infinite;
 }
